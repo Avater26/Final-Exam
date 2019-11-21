@@ -1,0 +1,175 @@
+/*--------- General ---------*/
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+/*--------- Header ---------*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #497c70;
+    border-bottom: 2px solid black;
+}
+
+header img {
+    width: 200px;
+    display: block;
+    border-right: 2px solid black;
+}
+
+header h1 {
+    margin: auto;
+    font-size: 50px;
+}
+
+/*--------- Nav ---------*/
+nav {
+    background-color: #497c70;
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid black;
+
+}
+
+nav ul {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    width: 136px;
+}
+
+nav ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+nav ul li a,
+.newData {
+    background-color: #c5bfc5;
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.newData {
+    text-align: center;
+    padding: 25px;
+}
+
+/*--------- Main ---------*/
+
+main {
+    display: flex;
+    height: 91.8%;
+}
+
+/*--------- Section ---------*/
+
+section {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.singleItem {
+    display: flex;
+}
+
+/*--------- Table ---------*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    padding: 3px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: rgb(230, 227, 227);
+}
+
+table a {
+    color: black;
+    text-decoration: none;
+}
+
+table img {
+    width: 120px;
+}
+
+table .itemImg {
+    width: 90px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 50px auto;
+}
+
+form table {
+    margin-bottom: 20px;
+}
+
+form p {
+    text-align: center;
+}
+
+input,
+select {
+    margin-bottom: 15px;
+}
+
+.image_form {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, auto));
+    grid-template-rows: repeat(auto, minmax(90px, auto));
+}
+
+.image_form input[type="radio"] {
+    display: none;
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.image_form input[type="radio"]:checked+label .thumbnail {
+    border: 2px solid rgb(20, 27, 27)
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 90px;
+    border: 2px solid lightgray;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.7);
+}

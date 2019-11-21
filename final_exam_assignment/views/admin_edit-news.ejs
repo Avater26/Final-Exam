@@ -1,0 +1,28 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section>
+        <form method="post" enctype="multipart/form-data">
+            <span
+                style="color: red"><%= typeof messages != 'undefined' && typeof messages.error != 'undefined' ? messages.error : '' %></span>
+            <span
+                style="color: green"><%= typeof messages != 'undefined' && typeof messages.info != 'undefined' ? messages.info : '' %></span>
+
+            <fieldset>
+                <label for="headline">Overskrift</label>
+                <input type="text" name="headline" id="headline" value="<%= news.headline %>">
+            </fieldset>
+            <fieldset>
+                <label for="text">Brødtekst</label>
+                <textarea name="text" id="text" cols="30" rows="10"><%= news.text %></textarea>
+            </fieldset>
+            <fieldset>
+                <label for="date">Oprettelses dato</label>
+                <input type="date" name="date" id="date" value="<%= news.date %>">
+            </fieldset>
+            <button type="submit">Update</button>
+        </form>
+    </section>
+</main>
+<% include partials/admin_footer.ejs %>

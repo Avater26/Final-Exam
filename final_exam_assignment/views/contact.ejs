@@ -1,0 +1,63 @@
+<% include partials/head.ejs %>
+<main>
+    <div class="mainContent contact">
+        <div class="contact_open">
+            <p class="contact_titles">Kontaktoplysninger</p>
+            <p><%= contact.name %></p>
+            <p><%= contact.address %></p>
+            <p><%= contact.city %></p>
+            <br>
+            <p>Telefon: <%= contact.phone %></p>
+            <p>Fax: <%= contact.fax %></p>
+            <p>Email: <%= contact.email %></p>
+            <p class="contact_titles">Åbningstider</p>
+            <% times.forEach(time =>{%>
+            <% if(time.not_open === 1){%>
+            <div class="open_times">
+                <p><%= time.days %></p>
+                <p>Lukket</p>
+            </div>
+            <%} else{%>
+            <div class="open_times">
+                <p><%= time.days %></p>
+                <p><%= time.open %> - <%= time.close %></p>
+            </div>
+            <%}});%>
+        </div>
+
+        <form method="post" class="commentForm">
+            <span
+                style="color: red"><%= typeof messages != 'undefined' && typeof messages.error != 'undefined' ? messages.error : '' %></span>
+            <span
+                style="color: green"><%= typeof messages != 'undefined' && typeof messages.info != 'undefined' ? messages.info : '' %></span>
+            <div>
+                <label for="name">Navn</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address">
+            </div>
+
+            <div>
+                <label for="phone">Telefon</label>
+                <input type="tel" name="phone" id="phone">
+            </div>
+
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div>
+                <label for="comment">Spørgsmål/kommentar</label>
+                <textarea name="comment" id="comment" cols="30" rows="10" data-role="none"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    </div>
+    <% include partials/aside.ejs %>
+</main>
+
+<% include partials/footer.ejs %>

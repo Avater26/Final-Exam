@@ -1,0 +1,20 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section class="singleItem">
+        <form method="post" enctype="multipart/form-data" id="signupForm">
+            <fieldset>
+                <label for="headline">Overskrift</label>
+                <input type="text" name="headline" id="headline">
+            </fieldset>
+            <fieldset>
+                <label for="text">Brødtekst</label>
+                <textarea name="text" id="text" cols="30" rows="10"></textarea>
+            </fieldset>
+            <button type="submit">Create Role</button>
+        </form>
+    </section>
+</main>
+
+<% include partials/admin_footer.ejs %>

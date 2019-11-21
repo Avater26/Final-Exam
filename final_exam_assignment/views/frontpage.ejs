@@ -1,0 +1,15 @@
+<% include partials/head.ejs %>
+<main id="frontpageMain">
+    <div class="mainContent frontpage">
+        <form action="/boliger" method="get" id="frontpage_search">
+            <label for="case_number">Find din nye bolig</label>
+            <div>
+                <input type="search" name="case_number" id="case_number" placeholder="postnr., by, vej, sagsnr."><button
+                    type="submit"><img src="../images/site_images/search.svg"></button>
+            </div>
+        </form>
+    </div>
+    <% include partials/aside.ejs %>
+</main>
+
+<% include partials/footer.ejs %>

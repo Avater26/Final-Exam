@@ -1,0 +1,60 @@
+<% include partials/head.ejs %>
+<main>
+    <div class="mainContent house">
+        <div class="images">
+            <div class="mainImage">
+                <img src="%>" alt="">
+            </div>
+
+            <div class="thumbnailList">
+                <% images.forEach(image =>{%>
+                <img class="thumbnail" src="../images/uploads/thumbnail_<%= image.path %>" alt="produkt billede"
+                    onclick="return changeImage(this)">
+                <%})%>
+            </div>
+        </div>
+        <div>
+            <h2><%= result.title %></h2>
+            <p><%= result.description %></p>
+
+            <div class="house_info">
+                <div class="house_sizes">
+                    <div>
+                        <p>Bolig m<sup>2</sup></p>
+                        <p><%= result.size_home %></p>
+                    </div>
+                    <div>
+                        <p>Grund m<sup>2</sup></p>
+                        <p><%= result.size_area %></p>
+                    </div>
+                </div>
+                <div class="house_prices">
+                    <div>
+                        <p>Pris DKK</p>
+                        <p><%= result.price %></p>
+                    </div>
+                    <div>
+                        <p>Brutto</p>
+                        <p><%= result.brutto %></p>
+                    </div>
+                    <div>
+                        <p>Netto</p>
+                        <p><%= result.netto %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include partials/aside.ejs %>
+</main>
+<script>
+    const mainImage = document.querySelector(".mainImage img");
+    const thumbnails = document.querySelectorAll("img.thumbnail");
+
+    mainImage.src = thumbnails[0].src.replace("thumbnail_", "");
+
+    function changeImage(e) {
+        mainImage.src = e.src.replace("thumbnail_", "")
+    }
+</script>
+<% include partials/footer.ejs %>

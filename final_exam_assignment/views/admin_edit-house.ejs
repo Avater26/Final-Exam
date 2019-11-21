@@ -1,0 +1,73 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section class="singleItem">
+        <form method="post" enctype="multipart/form-data">
+            <span
+                style="color: red"><%= typeof messages != 'undefined' && typeof messages.error != 'undefined' ? messages.error : '' %></span>
+            <span
+                style="color: green"><%= typeof messages != 'undefined' && typeof messages.info != 'undefined' ? messages.info : '' %></span>
+
+            <fieldset>
+                <label for="title">Navn</label>
+                <input type="text" name="title" id="title" value="<%= house.title %>">
+            </fieldset>
+            <fieldset>
+                <label for="case_number">Sagsnummer</label>
+                <input type="number" name="case_number" id="case_number" value="<%= house.case_number %>">
+            </fieldset>
+            <fieldset>
+                <label for="description">Beskrivelse</label>
+                <textarea name="description" id="description" cols="30" rows="10"><%= house.description %></textarea>
+            </fieldset>
+            <fieldset>
+                <label for="price">Pris</label>
+                <input type="number" name="price" id="price" value="<%= house.price %>">
+            </fieldset>
+            <fieldset>
+                <label for="brutto">Butto</label>
+                <input type="number" name="brutto" id="brutto" value="<%= house.brutto %>">
+            </fieldset>
+            <fieldset>
+                <label for="netto">Netto</label>
+                <input type="number" name="netto" id="netto" value="<%= house.netto %>">
+            </fieldset>
+            <fieldset>
+                <label for="size_area">Grundareal m<sup>2</sup></label>
+                <input type="number" name="size_area" id="size_area" value="<%= house.size_area %>">
+            </fieldset>
+            <fieldset>
+                <label for="size_home">Boligstørrelse m<sup>2</sup></label>
+                <input type="number" name="size_home" id="size_home" value="<%= house.size_home %>">
+            </fieldset>
+            <fieldset>
+                <label for="type">Bolig type</label>
+                <select name="type" id="type">
+                    <% types.forEach(type => { %>
+                    <option value="<%= type.id %>" <% if (house.fk_house_type==type.id ){%> selected <%} %>>
+                        <%= type.name %>
+                    </option>
+                    <% }); %>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="image">Images</label>
+                <input type="file" name="image" id="image" multiple>
+            </fieldset>
+            <button type="submit">Update</button>
+        </form>
+        <form class="image_form" action="/admin/house/setPrimaryImage" method="POST">
+            <% images.forEach(image => { %>
+            <div>
+                <input type="radio" name="primary_image" id="<%= image.id %>" value="<%= image.id %>"
+                    onchange="this.form.submit()" <% if(image.primary_img == 1){%> checked <%}%>>
+                <label for="<%= image.id %>">
+                <div class="thumbnail">
+                    <img src="/images/uploads/thumbnail_<%= image.path %>">
+                </div>
+                </label>
+            </div>
+            <% }); %> </form>
+    </section>
+</main> <% include partials/admin_footer.ejs %>

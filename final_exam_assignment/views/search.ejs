@@ -1,0 +1,118 @@
+<% include partials/head.ejs %>
+<main>
+    <div class="mainContent search">
+        <p>Her kan du søge i vores store boligoversigt. Du kan vælge at søge direkte på et sagsnummer,</p>
+        <p>eller vælge at udfylde dine søgekriterier i formularen - måske har vi netop nu din</p>
+        <p>drømmebolig til salg.</p>
+        <span
+            style="color: red"><%= typeof messages != 'undefined' && typeof messages.error != 'undefined' ? messages.error : '' %></span>
+        <form action="/boliger" method="get">
+            <div class="case_number">
+                <label for="case_number">Sagsnummer:</label>
+                <input type="search" name="case_number" id="case_number">
+            </div>
+            <div class="house_type">
+                <p>Boligtype:</p>
+                <div class="house_types_list">
+                    <% types.forEach(type => { %>
+                    <div>
+                        <input type="checkbox" name="fk_house_type" id="type_<%= type.id %>" value="<%= type.id %>"
+                            <% if(input.fk_house_type !== undefined){ for(let i = 0; i< input.fk_house_type.length; i++ ){ if (input.fk_house_type[i] == type.id){%>
+                            checked <%}}}%>>
+                        <label for="type_<%= type.id %>"><%= type.name %></label>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <div class="inputarea">
+                <div class="inputarea_block">
+                    <p>Boligstørrelse m<sup>2</sup>:</p>
+                    <p>Grundstørrelse m<sup>2</sup>:</p>
+                    <p>Pris DKK:</p>
+                    <p>Husleje DKK (brutto):</p>
+                    <p>Husleje DKK (netto):</p>
+                </div>
+                <div class="inputarea_block">
+                    <div class="input_lable_aligner">
+                        <label for="minHome">mindst</label>
+                        <input type="number" name="minHome" id="minHome"
+                            value="<%= (typeof input.minHome != 'undefined') ? input.minHome : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="minArea">mindst</label>
+                        <input type="number" name="minArea" id="minArea"
+                            value="<%= (typeof input.minArea != 'undefined') ? input.minArea : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="minPrice">mindst</label>
+                        <input type="number" name="minPrice" id="minPrice"
+                            value="<%= (typeof input.minPrice != 'undefined') ? input.minPrice : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="minBrutto">mindst</label>
+                        <input type="number" name="minBrutto" id="minBrutto"
+                            value="<%= (typeof input.minBrutto != 'undefined') ? input.minBrutto : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="minNetto">mindst</label>
+                        <input type="number" name="minNetto" id="minNetto"
+                            value="<%= (typeof input.minNetto != 'undefined') ? input.minNetto : '' %>">
+                    </div>
+
+                </div>
+                <div class="inputarea_block">
+                    <div class="input_lable_aligner">
+                        <label for="maxHome">højest</label>
+                        <input type="number" name="maxHome" id="maxHome"
+                            value="<%= (typeof input.maxHome != 'undefined') ? input.maxHome : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="maxArea">højest</label>
+                        <input type="number" name="maxArea" id="maxArea"
+                            value="<%= (typeof input.maxArea != 'undefined') ? input.maxArea : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="maxPrice">højest</label>
+                        <input type="number" name="maxPrice" id="maxPrice"
+                            value="<%= (typeof input.maxPrice != 'undefined') ? input.maxPrice : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="maxBrutto">højest</label>
+                        <input type="number" name="maxBrutto" id="maxBrutto"
+                            value="<%= (typeof input.maxBrutto != 'undefined') ? input.maxBrutto : '' %>">
+                    </div>
+
+                    <div class="input_lable_aligner">
+                        <label for="maxNetto">højest</label>
+                        <input type="number" name="maxNetto" id="maxNetto"
+                            value="<%= (typeof input.maxNetto != 'undefined') ? input.maxNetto : '' %>">
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Søg</button>
+        </form>
+        <section>
+            <% results.forEach(result =>{%>
+            <div class="houseList">
+                <img src="../images/uploads/thumbnail_<%= result.path %>" alt="">
+                <div class="houseList_info">
+                    <h2><%= result.title %></h2>
+                    <p><%= result.description %></p>
+                    <a href="/bolig/<%= result.id %>">Læs mere</a>
+                </div>
+            </div>
+
+            <%})%>
+        </section>
+    </div>
+    <% include partials/aside.ejs %>
+</main>
+
+<% include partials/footer.ejs %>

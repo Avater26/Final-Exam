@@ -1,0 +1,40 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section>
+        <form method="post" enctype="multipart/form-data">
+            <span
+                style="color: red"><%= typeof messages != 'undefined' && typeof messages.error != 'undefined' ? messages.error : '' %></span>
+            <span
+                style="color: green"><%= typeof messages != 'undefined' && typeof messages.info != 'undefined' ? messages.info : '' %></span>
+
+            <fieldset>
+                <label for="name">Firma navn</label>
+                <input type="text" name="name" id="name" value="<%= contact.name %>">
+            </fieldset>
+            <fieldset>
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address" value="<%= contact.address %>">
+            </fieldset>
+            <fieldset>
+                <label for="city">By</label>
+                <input type="text" name="city" id="city" value="<%= contact.city %>">
+            </fieldset>
+            <fieldset>
+                <label for="phone">Telefon</label>
+                <input type="tel" name="phone" id="phone" value="<%= contact.phone %>">
+            </fieldset>
+            <fieldset>
+                <label for="fax">Fax</label>
+                <input type="tel" name="fax" id="fax" value="<%= contact.fax %>">
+            </fieldset>
+            <fieldset>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<%= contact.email %>">
+            </fieldset>
+            <button type="submit">Update</button>
+        </form>
+    </section>
+</main>
+<% include partials/admin_footer.ejs %>

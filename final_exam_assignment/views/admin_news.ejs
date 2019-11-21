@@ -1,0 +1,46 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section>
+        <a class="newData" href="/admin/news/new">Opret en ny nyhed</a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Overskrift</th>
+                <th>Brødtekst</th>
+                <th>Dato</th>
+                <th>Rediger / Slet</th>
+            </tr>
+            <% results.forEach(result => { %>
+            <tr>
+                <td>
+                    <%= result.id %>
+                </td>
+                <td>
+                    <%= result.headline %>
+                </td>
+                <td>
+                    <%= result.text %>
+                </td>
+                <td>
+                    <%= result.date %>
+                </td>
+                <td>
+                    <div>
+                        <a href="/admin/news/edit/<%= result.id %>">
+                            <p>Rediger</p><i class="fas fa-edit"></i>
+                        </a>
+                        <hr>
+                        <a href="/admin/news/delete/<%= result.id %>">
+                            <p>Slet</p><i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+    </section>
+</main>
+
+<% include partials/admin_footer.ejs %>

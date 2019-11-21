@@ -1,0 +1,74 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section>
+        <a class="newData" href="/admin/house/new">Opret en ny bolig</a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Sagsnummer</th>
+                <th>Billede</th>
+                <th>Nanvn</th>
+                <th>Beskrivelse</th>
+                <th>Pris</th>
+                <th>Brutto</th>
+                <th>Netto</th>
+                <th>Grundareal m<sup>2</sup></th>
+                <th>Boligstørrelse m<sup>2</sup></th>
+                <th>Bolig type</th>
+                <th>Rediger / Slet</th>
+            </tr>
+            <% results.forEach(result => { %>
+            <tr>
+                <td>
+                    <%= result.id %>
+                </td>
+                <td>
+                    <%= result.case_number %>
+                </td>
+                <td>
+                    <img src="../images/uploads/<%= result.path %>" alt="">
+                </td>
+                <td>
+                    <%= result.title %>
+                </td>
+                <td>
+                    <%= result.description %>
+                </td>
+                <td>
+                    <%= result.price %>
+                </td>
+                <td>
+                    <%= result.brutto %>
+                </td>
+                <td>
+                    <%= result.netto %>
+                </td>
+                <td>
+                    <%= result.size_area %>
+                </td>
+                <td>
+                    <%= result.size_home %>
+                </td>
+                <td>
+                    <%= result.type %>
+                </td>
+                <td>
+                    <div>
+                        <a href="/admin/house/edit/<%= result.id %>">
+                            <p>Rediger</p><i class="fas fa-edit"></i>
+                        </a>
+                        <hr>
+                        <a href="/admin/house/delete/<%= result.id %>">
+                            <p>Slet</p><i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+    </section>
+</main>
+
+<% include partials/admin_footer.ejs %>

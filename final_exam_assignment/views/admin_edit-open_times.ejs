@@ -1,0 +1,28 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section class="singleItem">
+        <form method="post" enctype="multipart/form-data">
+            <fieldset>
+                <span
+                    style="color: red"><%= typeof messages != 'undefined' && typeof messages.error != 'undefined' ? messages.error : '' %></span>
+                <span
+                    style="color: green"><%= typeof messages != 'undefined' && typeof messages.info != 'undefined' ? messages.info : '' %></span>
+
+                <label for="days">Days</label>
+                <input type="text" name="days" id="days" value="<%= days.days %>">
+            </fieldset>
+            <fieldset>
+                <label for="open">Open</label>
+                <input type="time" name="open" id="open" value="<%= days.open %>">
+            </fieldset>
+            <fieldset>
+                <label for="close">Close</label>
+                <input type="time" name="close" id="close" value="<%= days.close %>">
+            </fieldset>
+            <button type="submit">Update</button>
+        </form>
+    </section>
+</main>
+<% include partials/admin_footer.ejs %>

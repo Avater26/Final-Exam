@@ -1,0 +1,26 @@
+</body>
+<script>
+    window.addEventListener("load", function () {
+        var frontpage = document.querySelector("#frontpage");
+        var home = document.querySelector("#homes");
+        var news = document.querySelector("#news");
+        var contact = document.querySelector("#contact");
+        var site = window.location.href;
+
+        if (/nyheder/.test(site)) {
+            news.className = "currentPage";
+        } else if (/kontakt/.test(site)) {
+            contact.className = "currentPage";
+        } else if (/bolig/.test(site) || /s%C3%B8g/.test(site)) {
+            home.className = "currentPage";
+        } else {
+            frontpage.className = "currentPage";
+        }
+
+
+
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+<aside>
+    <div class="random_house">
+        <img src="../images/uploads/thumbnail_<%= randHouse[0].path %>" alt="">
+        <h2><%= randHouse[0].title %></h2>
+        <br>
+        <div class="random_house_info">
+            <p>Bolig m<sup>2</sup></p>
+            <p><%= randHouse[0].size_home %></p>
+        </div>
+        <div class="random_house_info">
+            <p>Grund m<sup>2</sup></p>
+            <p><%= randHouse[0].size_area %></p>
+        </div>
+        <div class="random_house_info">
+            <p>Pris</p>
+            <p><%= randHouse[0].price %></p>
+        </div>
+        <br>
+        <div class="random_house_info">
+            <p>Sagsnummer</p>
+            <p><%= randHouse[0].case_number %></p>
+        </div>
+        <a href="/bolig/<%= randHouse[0].id %>">Læs mere</a>
+    </div>
+</aside>

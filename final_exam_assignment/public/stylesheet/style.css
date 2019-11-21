@@ -1,0 +1,413 @@
+/*-------------------- General CSS --------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+/*-------------------- Header --------------------*/
+header {
+    background-image: url(../images/site_images/stjerne.svg);
+    background-color: #430C0C;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position-y: -22px;
+    background-position-x: 30px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: normal;
+    margin: 15px 0 5px 165px;
+    color: #FFFFFF;
+}
+
+/*-------------------- Navigation --------------------*/
+nav {
+    display: flex;
+    background-color: #7B2727;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+    border-bottom: 0;
+    margin: 0 0 0 65px;
+}
+
+nav ul li {
+    list-style: none;
+    border-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+nav ul li a {
+    font-size: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 8px 25px;
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background-color: white;
+}
+
+nav ul li:hover a {
+    color: #7B2727;
+}
+
+.currentPage {
+    background-color: white;
+    color: #7B2727;
+}
+
+/*-------------------- Main --------------------*/
+/*--------- Universal ---------*/
+
+main {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.mainContent {
+    margin-left: 60px;
+    margin-top: 55px;
+    width: 60%;
+}
+
+h2 {
+    font-size: 13px
+}
+
+p {
+    font-size: 13px
+}
+
+main {
+    background-image: url("../images/site_images/stjerne_grå2.png");
+    background-repeat: no-repeat;
+    background-position: 140% -100%;
+}
+
+/*--------- Frontpage ---------*/
+
+#frontpageMain {
+    background-image: url("../images/site_images/forside.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: left;
+}
+
+.frontpage {
+    margin-left: 345px;
+    width: 28%;
+}
+
+.frontpage label {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.frontpage div {
+    display: flex;
+    background-color: rgba(255, 255, 255, 90%);
+    border: black solid 1.5px;
+    justify-content: space-between;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.frontpage input,
+.frontpage button {
+    border: none;
+    background-color: transparent;
+}
+
+.frontpage input,
+.frontpage input::placeholder {
+    width: 100%;
+    font-size: 18px;
+    color: black;
+}
+
+.frontpage img {
+    width: 30px;
+    height: auto;
+}
+
+/*--------- News ---------*/
+
+.news {
+    width: 45%;
+}
+
+.news h2 {
+    font-weight: bold;
+}
+
+.news article {
+    display: flex;
+    flex-direction: column;
+}
+
+.news article p {
+    margin: 20px 0 55px;
+}
+
+.news article div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*--------- Search ---------*/
+.search {
+    width: 50%;
+}
+
+.search form {
+    margin: 50px 0 30px;
+    display: flex;
+    flex-direction: column;
+    width: 530px;
+}
+
+.search input {
+    border: 1px black solid;
+    font-size: 16px;
+}
+
+.search form button {
+    width: 80px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    color: #FFFFFF;
+    background-color: #7B2727;
+    align-self: flex-end;
+    padding: 5px 0;
+    margin-top: 20px;
+}
+
+
+.search label,
+.search p {
+    font-size: 13px;
+}
+
+.inputarea {
+    display: flex;
+    justify-content: space-between;
+    width: 530px;
+}
+
+.inputarea_block {
+    display: flex;
+    flex-direction: column;
+    height: 190px;
+    justify-content: space-between;
+}
+
+.input_lable_aligner {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputarea input {
+    width: 90px;
+}
+
+.case_number {
+    justify-content: space-between;
+    display: flex;
+    width: 380px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.case_number input {
+    width: 250px;
+}
+
+.house_type {
+    justify-content: space-between;
+    display: flex;
+    width: 380px;
+}
+
+.house_types_list {
+    column-count: 2;
+    width: 250px;
+}
+
+.house_types_list div {
+    margin-bottom: 20px;
+}
+
+.house_types_list input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}
+
+.houseList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.houseList_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.houseList_info a {
+    color: black;
+    font-size: 13px;
+    width: fit-content;
+}
+
+/*--------- Single house ---------*/
+
+.house {
+    display: flex;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbnailList {
+    display: flex;
+    margin-top: 5px
+}
+
+.thumbnail {
+    width: 120px;
+    height: auto;
+    margin: 0 2px
+}
+
+.house_info {
+    display: flex;
+    margin-top: 15px;
+}
+
+.house_sizes {
+    margin-right: 120px
+}
+
+.house_sizes,
+.house_prices {
+    width: 30%;
+}
+
+.house_sizes div,
+.house_prices div {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*--------- Contact ---------*/
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.contact {
+    display: flex;
+    width: 47%;
+    justify-content: space-between;
+}
+
+.contact_titles {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.open_times {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact form label {
+    font-size: 13px;
+}
+
+.contact form div {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 220px;
+    margin-left: 20px;
+    border: 1px solid black;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form button {
+    width: 90px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    color: #FFFFFF;
+    background-color: #7B2727;
+    align-self: flex-end;
+    padding: 5px 0;
+}
+
+
+/*-------------------- Aside --------------------*/
+
+.random_house a {
+    color: black;
+    font-size: 13px;
+    align-self: flex-end;
+}
+
+aside {
+    background-color: rgba(255, 255, 255, 80%);
+}
+
+aside img {
+    /* width: 200px;
+    height: auto; */
+    width: max-content;
+    align-self: center;
+}
+
+.random_house {
+    display: flex;
+    flex-direction: column;
+    margin: 55px 55px 0;
+    width: 200px;
+}
+
+.random_house_info {
+    display: flex;
+    justify-content: space-between;
+}

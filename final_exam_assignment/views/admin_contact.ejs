@@ -1,0 +1,49 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section>
+        <table>
+            <tr>
+                <th>Firma navn</th>
+                <th>Adresse</th>
+                <th>By</th>
+                <th>Telefon</th>
+                <th>Fax</th>
+                <th>Email</th>
+                <th>Rediger</th>
+            </tr>
+            <% results.forEach(result => { %>
+            <tr>
+                <td>
+                    <%= result.name %>
+                </td>
+                <td>
+                    <%= result.address %>
+                </td>
+                <td>
+                    <%= result.city %>
+                </td>
+                <td>
+                    <%= result.phone %>
+                </td>
+                <td>
+                    <%= result.fax %>
+                </td>
+                <td>
+                    <%= result.email %>
+                </td>
+                <td>
+                    <div>
+                        <a href="/admin/contact/edit/<%= result.id %>">
+                            <p>Rediger</p><i class="fas fa-edit"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+    </section>
+</main>
+
+<% include partials/admin_footer.ejs %>

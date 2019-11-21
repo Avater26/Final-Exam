@@ -1,0 +1,45 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section>
+        <table>
+            <tr>
+                <th>Navn</th>
+                <th>Adresse</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Kommentar</th>
+                <th>Slet</th>
+            </tr>
+            <% results.forEach(result => { %>
+            <tr>
+                <td>
+                    <%= result.name %>
+                </td>
+                <td>
+                    <%= result.address %>
+                </td>
+                <td>
+                    <%= result.phone %>
+                </td>
+                <td>
+                    <%= result.email %>
+                </td>
+                <td>
+                    <%= result.comment %>
+                </td>
+                <td>
+                    <div>
+                        <a href="/admin/comment/delete/<%= result.id %>">
+                            <p>Delete</p><i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+    </section>
+</main>
+
+<% include partials/admin_footer.ejs %>

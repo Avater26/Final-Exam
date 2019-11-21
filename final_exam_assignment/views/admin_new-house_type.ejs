@@ -1,0 +1,15 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section class="singleItem">
+        <form method="post" enctype="multipart/form-data" id="signupForm">
+            <fieldset>
+                <label for="name">Navn</label>
+                <input type="text" name="name" id="name">
+            </fieldset>
+            <button type="submit">Opret bolig type</button>
+        </form>
+    </section>
+</main>
+<% include partials/admin_footer.ejs %>

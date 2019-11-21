@@ -1,0 +1,38 @@
+{
+  "name": "wi83-eksamensopgave-magnus-holm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rts-cmk-wi83/wi83-eksamensopgave-Magnus-Holm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rts-cmk-wi83/wi83-eksamensopgave-Magnus-Holm/issues"
+  },
+  "homepage": "https://github.com/rts-cmk-wi83/wi83-eksamensopgave-Magnus-Holm#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.1.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-formidable": "^1.2.0",
+    "express-log-errors": "^2.1.1",
+    "express-session": "^1.16.2",
+    "jimp": "^0.8.2",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.7.0",
+    "uid": "0.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

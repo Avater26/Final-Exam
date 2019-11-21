@@ -1,0 +1,30 @@
+<% include partials/admin_head.ejs %>
+<% include partials/admin_header.ejs %>
+<main role="main">
+    <% include partials/admin_nav.ejs %>
+    <section class="singleItem">
+        <form method="post" id="signupForm">
+            <fieldset>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </fieldset>
+            <fieldset>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </fieldset>
+            <fieldset>
+                <label for="role">Role</label>
+                <select name="role" id="role">
+                    <% roles.forEach(role => { %>
+                    <option value="<%= role.id %>">
+                        <%= role.name %>
+                    </option>
+                    <% }); %>
+                </select>
+            </fieldset>
+            <button type="submit">Create User</button>
+        </form>
+    </section>
+</main>
+
+<% include partials/admin_footer.ejs %>

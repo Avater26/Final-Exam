@@ -1,0 +1,17 @@
+<% include partials/head.ejs %>
+<main>
+    <div class="mainContent news">
+        <% news.forEach(story =>{%>
+        <article>
+            <div>
+                <h2><%= story.headline %></h2>
+                <h2><%= story.date %></h2>
+            </div>
+            <p><%= story.text %></p>
+        </article>
+        <%});%>
+    </div>
+    <% include partials/aside.ejs %>
+</main>
+
+<% include partials/footer.ejs %>
