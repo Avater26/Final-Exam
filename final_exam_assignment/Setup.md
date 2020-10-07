@@ -1,5 +1,6 @@
 # Setup
 In order to get this project to run, the following steps need to be taken:
+- Create a .env file with the following data: PORT, DB_HOST=localhost, DB_USER, DB_PSWD and DB_DTBS=boligstjernen. Make sure to fill out the data for rach of those with the correct information, depending on your setup. Just make sure that DB_DTBS is equal to boligstjernen.
 - In your MySQL editor, create a schema with the name "boligstjernen" and import "boligstjernen.sql" into it. This will set up the database that the website uses.
 - Open the project folder in your code editor, open the editors terminal and write "npm i". This will install every Node.js package that the project uses.
 
