@@ -5,4 +5,4 @@ Before trying to run the websites in this repository, make sure to have the foll
 - A way to import/export and edit a MySQL database, for example using MySQL Workbench.
 - Node.js
 
-Once all of the above installations are done, everything that is required to run the websites, minus Node.js packages, will have been installed.
+Once all of the above installations are done, everything that is required to run the websites, minus Node packages, will have been installed.
